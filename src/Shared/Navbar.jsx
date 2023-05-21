@@ -12,6 +12,7 @@ const Navbar = () => {
     }
     const navItem=  <>
     <Link to='/' className='px-3 hover:text-sky-500'>Home</Link>
+    <Link to='/about' className='px-3 hover:text-sky-500'>About</Link>
     
     <Link to='/alltoys' className='px-3  hover:text-sky-500'>All Toys</Link>
     {

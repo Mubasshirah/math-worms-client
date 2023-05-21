@@ -8,7 +8,7 @@ const Banner = () => {
                 <div id="slide1" className="carousel-item relative w-full ">
                     <img src={img6} className="w-full " />
                     <div className="absolute flex justify-start items-center transform -translate-y-1/2 ps-10 top-1/2 bg-gradient-to-r from-[#151515] to-[rgba(21, 21, 21, 0)] w-full h-full">
-                        <div className='text-white  '>
+                        <div className='text-white ps-14 '>
                             <h2 className='text-6xl pt-5 font-bold'>Educational</h2>
                             <h2 className='text-6xl font-bold'>And Funny</h2>
                             <h2 className='text-6xl font-bold mb-5'>Toys for Kids</h2>
@@ -32,7 +32,7 @@ const Banner = () => {
                     <img src={img3} className="w-full" />
                    
                     <div className="absolute flex justify-start items-center transform -translate-y-1/2 ps-10 top-1/2 bg-gradient-to-r from-[#151515] to-[rgba(21, 21, 21, 0)] w-full h-full">
-                        <div className='text-white  '>
+                        <div className='text-white ps-14 '>
                             <h2 className='text-6xl pt-5 font-bold'>Educational</h2>
                             <h2 className='text-6xl font-bold'>And Funny</h2>
                             <h2 className='text-6xl font-bold mb-5'>Toys for Kids</h2>

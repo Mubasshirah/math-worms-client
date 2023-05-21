@@ -3,7 +3,14 @@
 const Blogs = () => {
     return (
         <div>
-            this is blog
+            <h1></h1>
+            <p></p>
+            <h1></h1>
+            <p></p>
+            <h1></h1>
+            <p></p>
+            <h1></h1>
+            <p></p>
         </div>
     );
 };
