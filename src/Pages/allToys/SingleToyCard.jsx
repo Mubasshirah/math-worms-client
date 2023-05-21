@@ -7,12 +7,15 @@ const SingleToyCard = ({ toy }) => {
     const {user}=useContext(AuthContext);
     const { _id, name, seller_name, sub_category, price, available_quantity, picture, rating, description } = toy;
     const handleViewDetails=()=>{
-        {
-            user ? 
-            <Link to={`/allToys/${_id}`} className="btn btn-info"></Link>
-            : 
-            alert('please log in first!')
+        if(!user){
+            alert('please log in first');
+            return;
+           
         }
+        else{
+            <Link to={`/allToys/${_id}`} className="btn btn-info"></Link>
+        }
+        
     }
     return (
     
@@ -41,7 +44,7 @@ const SingleToyCard = ({ toy }) => {
                
                <td >
                
-                    <Link to={`/allToys/${_id}`} className="btn btn-info" onClick={()=>{handleViewDetails}}>View Details</Link>
+                    <Link to={`/allToys/${_id}`} className="btn btn-info" onClick={()=>{handleViewDetails()}}>View Details</Link>
 
                 
                </td>
