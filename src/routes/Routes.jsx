@@ -8,6 +8,8 @@ import AddAToy from "../Pages/addAToy/AddAToy";
 import Blogs from "../Pages/Blogs/Blogs";
 import Login from "../Pages/Login/Login";
 import Register from "../Pages/register/Register";
+import SingleToyViewDetails from "../Pages/singleToyViewDetails/SingleToyViewDetails";
+import PrivateRoute from "./PrivateRoute";
 
 const router = createBrowserRouter([
     {
@@ -23,6 +25,11 @@ const router = createBrowserRouter([
             path:'/alltoys',
             element:<AllToys></AllToys>,
             loader:()=>fetch('http://localhost:5000/allToys')
+        },
+        {
+            path:'/alltoys/:id',
+            element:<PrivateRoute><SingleToyViewDetails></SingleToyViewDetails></PrivateRoute>,
+            loader:({params})=>fetch(`http://localhost:5000/allToys/${params.id}`)
         },
         {
             path:'/mytoys',

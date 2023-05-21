@@ -18,7 +18,7 @@ const AllToys = () => {
                                 <p>Picture and</p>
                                 <p>Toy Name</p>
                             </th>
-                            <th>Description</th>
+                           
                             <th>Sub Category</th>
                             <th>Seller</th>
                             <th> 

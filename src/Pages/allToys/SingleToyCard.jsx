@@ -1,7 +1,19 @@
+import { useContext } from "react";
+import { Link } from "react-router-dom";
+import { AuthContext } from "../../provider/AuthProvider";
 
 
 const SingleToyCard = ({ toy }) => {
+    const {user}=useContext(AuthContext);
     const { _id, name, seller_name, sub_category, price, available_quantity, picture, rating, description } = toy;
+    const handleViewDetails=()=>{
+        {
+            user ? 
+            <Link to={`/allToys/${_id}`} className="btn btn-info"></Link>
+            : 
+            alert('please log in first!')
+        }
+    }
     return (
     
             <tr>
@@ -13,11 +25,7 @@ const SingleToyCard = ({ toy }) => {
                     <p>{name}</p>
                 </div>
             </th>
-            <td >
-            <p className="w-[15%]">
-                {description}
-              </p>
-            </td>
+           
             <td >
               <p>{sub_category}</p>
               
@@ -32,7 +40,10 @@ const SingleToyCard = ({ toy }) => {
             </td>
                
                <td >
-                <button className="btn btn-info">View Details</button>
+               
+                    <Link to={`/allToys/${_id}`} className="btn btn-info" onClick={()=>{handleViewDetails}}>View Details</Link>
+
+                
                </td>
         </tr>
         
