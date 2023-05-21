@@ -1,13 +1,26 @@
 import { Link } from "react-router-dom";
 import logo from '../assets/images/logo.png'
+import { useContext } from "react";
+import { AuthContext } from "../provider/AuthProvider";
 
 const Navbar = () => {
+    const {user,logOutUser}=useContext(AuthContext);
+    const handleLogOut=()=>{
+        logOutUser()
+        .then()
+        .catch(error=>console.log(error))
+    }
     const navItem=  <>
     <Link to='/' className='px-3 hover:text-sky-500'>Home</Link>
     
     <Link to='/alltoys' className='px-3  hover:text-sky-500'>All Toys</Link>
-    <Link to='/mytoys' className='px-3  hover:text-sky-500'>My Toys</Link>
+    {
+        user? <>
+        <Link to='/mytoys' className='px-3  hover:text-sky-500'>My Toys</Link>
     <Link to='/addatoy' className='px-3  hover:text-sky-500'>Add a Toy</Link>
+        </> :
+        <></>
+    }
     <Link to='/blogs' className='px-3  hover:text-sky-500'>Blogs</Link>
     </>
     return (
@@ -30,8 +43,20 @@ const Navbar = () => {
                 </ul>
             </div>
             <div className="navbar-end">
+            { user ?
+                              
+                              <div className="flex items-center">
+                                 
+                                 <img src={user.photoURL} alt=""  style={{width:'20px',height:'20px',borderRadius:'50%',marginRight:'15px'}} data-toggle="tooltip" data-placement="top" title={user.displayName} />
+                                 
+                                
+                                  <button className="btn bg-sky-500 border-0 text-white"  onClick={handleLogOut}>Logout</button>
+                              </div>
+                               :
+                               <Link className="btn bg-sky-500 border-0 text-white" to='/login'>Log In</Link>
+                           }   
             
-            <Link className="btn bg-sky-500 border-0 text-white" to='/login'>Log In</Link>
+          
             </div>
         </div>
     );
