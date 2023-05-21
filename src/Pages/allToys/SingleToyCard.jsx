@@ -26,8 +26,9 @@ const SingleToyCard = ({ toy }) => {
             <p>{seller_name}</p>
             </td>
             <td >
-            <p>${price}</p>
-            <p>{available_quantity}</p>
+            <p><strong>Price:</strong> ${price}</p>
+            <p><strong>Quantity:</strong> {available_quantity}</p>
+            <p><strong>Rating:</strong> {rating}</p>
             </td>
                
                <td >
