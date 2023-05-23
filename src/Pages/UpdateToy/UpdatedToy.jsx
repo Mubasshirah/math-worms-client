@@ -73,9 +73,6 @@ const UpdatedToy = () => {
               <input type="text" name="subcategory"  className="input input-bordered md:w-full" />
             </label>
           </div>
-          
-        </div>
-        <div className='md:flex mb-8'>
           <div className="form-control md:w-1/2 me-4">
             <label className="label">
               <span className="label-text">quantity</span>
@@ -85,12 +82,11 @@ const UpdatedToy = () => {
               <input type="text" name="quantity" className="input input-bordered md:w-full" />
             </label>
           </div>
-         
         </div>
-        
-          
       
+        <div className="mb-10">
         <input type="submit" className="btn btn-block mb-10"  value="Update Toy"/>
+        </div>
       </form>
     </div>
     );

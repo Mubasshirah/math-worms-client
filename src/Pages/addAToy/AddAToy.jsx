@@ -92,7 +92,7 @@ const AddAToy = () => {
                     <textarea name="details" required className="textarea textarea-bordered textarea-lg w-full " ></textarea>
 
                 </div>
-            <div className="form-control mt-6">
+            <div className="form-control my-6">
                 <input className="btn btn-primary btn-block" type="submit" value="Add this new toy to server" />
             </div>
         </form>
