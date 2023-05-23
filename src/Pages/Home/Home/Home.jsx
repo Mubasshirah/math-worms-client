@@ -1,3 +1,4 @@
+import UseTitle from "../../../hooks/UseTitle";
 import Banner from "../Banner";
 import Features from "../Features";
 import Gallery from "../Gallery";
@@ -7,6 +8,7 @@ import CustomersReview from "./CustomersReview";
 
 
 const Home = () => {
+    UseTitle('home');
     return (
         <div>
            

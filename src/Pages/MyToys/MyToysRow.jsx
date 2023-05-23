@@ -22,7 +22,7 @@ const MyToysRow = ({addedtoy,handleDelete}) => {
         <td>{subcategory}</td>
         <td>{details}</td>
         <th>
-        <Link to={`/addtoys/${_id}`} className="btn btn-ghost btn-xs">Update</Link>
+        <Link to={`/addtoys/${_id}`} className="btn btn-info btn-xs">Update</Link>
           
         </th>
     </tr>

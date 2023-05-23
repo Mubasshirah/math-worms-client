@@ -1,7 +1,9 @@
 
 import { Link } from 'react-router-dom';
 import error from '../../assets/images/error.jpg'
+import UseTitle from '../../hooks/UseTitle';
 const About = () => {
+    UseTitle('about');
     return (
         <div>
             <div className='h-2/5'>

@@ -1,7 +1,22 @@
+import { useContext } from "react";
+import { Link } from "react-router-dom";
+import { AuthContext } from "../../provider/AuthProvider";
 
 
 const ToyCategory = ({ single }) => {
-    const { picture, name, price, rating } = single;
+    const { _id,picture, name, price, rating } = single;
+    const {user}=useContext(AuthContext);
+    const handleViewDetails=()=>{
+        if(!user){
+            alert('please log in first');
+            return;
+           
+        }
+        else{
+            <Link to={`/allToys/${_id}`} className="btn btn-info"></Link>
+        }
+        
+    }
     return (
         <div>
             <div className="card w-96 bg-base-100 shadow-xl my-16">
@@ -10,6 +25,10 @@ const ToyCategory = ({ single }) => {
                     <p>Price: ${price}</p>
                 
                     <p>Rating: {rating}</p>
+                    <div>
+                    <Link to={`/allToys/${_id}`} className="btn btn-info" onClick={()=>{handleViewDetails()}}>View Details</Link>
+
+                    </div>
                 </div>
                 <figure><img src={picture}/></figure>
             </div>

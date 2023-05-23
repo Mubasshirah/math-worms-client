@@ -1,9 +1,11 @@
 import { useLoaderData } from "react-router-dom";
+import UseTitle from "../../hooks/UseTitle";
 
 
 const SingleToyViewDetails = () => {
+    UseTitle('toy details');
     const toy = useLoaderData();
-    const { _id, name, seller_name, seller_email, sub_category, price, available_quantity, picture, rating, description } = toy;
+    const {  name, seller_name, seller_email, price, available_quantity, picture, rating, description } = toy;
     return (
         <div className="my-14 ">
             <div className="card lg:card-side bg-base-100 shadow-xl">

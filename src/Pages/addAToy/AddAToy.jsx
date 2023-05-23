@@ -1,13 +1,20 @@
+import { useContext } from "react";
+import { useLoaderData } from "react-router-dom";
 import Swal from "sweetalert2";
+import { AuthContext } from "../../provider/AuthProvider";
+import UseTitle from "../../hooks/UseTitle";
 
 
 const AddAToy = () => {
+    UseTitle('add a toy');
+    const {user}=useContext(AuthContext);
+    console.log(user)
     const handleAddAToy=event=>{
      event.preventDefault();
      const form=event.target;
      const name=form.name.value;
-     const sellername=form.sellername.value;
-     const selleremail=form.selleremail.value;
+     const sellername=user?.displayName;
+     const selleremail=user?.email;
      
      const price=form.price.value;
      const subcategory=form.subcategory.value;
@@ -51,13 +58,13 @@ const AddAToy = () => {
                     <label className="label">
                         <span className="label-text">Seller Name</span>
                     </label>
-                    <input type="text" required name="sellername" className="input input-bordered" />
+                    <input type="text" required name="sellername" defaultValue={user?.displayName} className="input input-bordered" />
                 </div>
                 <div className="form-control">
                     <label className="label">
                         <span className="label-text">Seller Email</span>
                     </label>
-                    <input type="email" required name="selleremail"  placeholder="email" className="input input-bordered" />
+                    <input type="email" defaultValue={user?.email} required name="selleremail"   className="input input-bordered" />
                 </div>
                 <div className="form-control">
                     <label className="label">

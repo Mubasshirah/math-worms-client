@@ -1,10 +1,11 @@
 
+import UseTitle from "../../hooks/UseTitle";
 import SingleToyCard from "./SingleToyCard";
 import { useEffect, useState } from "react";
 
 
 const AllToys = () => {
-    
+    UseTitle('all toys');
     const [toys,setToys]=useState([]);
     const [searchText,setSearchText]=useState('');
     useEffect(()=>{

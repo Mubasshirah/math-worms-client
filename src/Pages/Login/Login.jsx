@@ -4,7 +4,9 @@ import { Link } from 'react-router-dom';
 import {  useLocation, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../provider/AuthProvider';
 import { useContext, useState } from 'react';
+import UseTitle from '../../hooks/UseTitle';
 const Login = () => {
+  UseTitle('log in');
   const [error,setError]=useState('');
   const navigate=useNavigate();
   const location=useLocation();

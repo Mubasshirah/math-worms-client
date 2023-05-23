@@ -1,9 +1,12 @@
 import { useContext, useEffect, useState } from "react";
 import { AuthContext } from "../../provider/AuthProvider";
 import MyToysRow from "./MyToysRow";
+import UseTitle from "../../hooks/UseTitle";
+import Swal from "sweetalert2";
 
 
 const MyToys = () => {
+    UseTitle('my toys');
     const { user } = useContext(AuthContext);
     const [addedToys, setAddedToys] = useState([]);
     const url = `http://localhost:5000/addtoys?email=${user?.email}`;
@@ -13,22 +16,38 @@ const MyToys = () => {
             .then(data => setAddedToys(data))
     }, [url]);
     const handleDelete = id => {
-        const proceed = confirm('Are You sure you want to delete');
-        if (proceed) {
-            fetch(`http://localhost:5000/addtoys/${id}`, {
-                method: 'DELETE'
-            })
-                .then(res => res.json())
-                .then(data => {
-                    console.log(data);
-                    if (data.deletedCount > 0) {
-                        alert('deleted successful');
-                        const remaining = addedToys.filter(addedToy => addedToy._id !== id);
-                        setAddedToys(remaining);
-                    }
-                })
+       
+        Swal.fire({
+            title: 'Are you sure?',
+            text: "You won't be able to revert this!",
+            icon: 'warning',
+            showCancelButton: true,
+            confirmButtonColor: '#3085d6',
+            cancelButtonColor: '#d33',
+            confirmButtonText: 'Yes, delete it!'
+          }).then((result) => {
+            if (result.isConfirmed) {
+              fetch(`http://localhost:5000/addtoys/${id}`,{
+                method:"DELETE"
+              })
+              .then(res=>res.json())
+              .then(data=>{console.log(data)
+              if(data.deletedCount>0){
+                Swal.fire(
+                  'Deleted!',
+                  'This toy has been deleted.',
+                  'success'
+                )
+                const remaining=addedToys.filter(toy=>toy._id!==id);
+              setAddedToys(remaining);
+              
+              }
+              })
+              
+            }
+          })
         }
-    }
+    
 
     
     return (

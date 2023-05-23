@@ -1,14 +1,18 @@
 import { useContext } from "react";
 import { Link } from "react-router-dom";
 import { AuthContext } from "../../provider/AuthProvider";
+import Swal from "sweetalert2";
+
 
 
 const SingleToyCard = ({ toy }) => {
+  
     const {user}=useContext(AuthContext);
-    const { _id, name, seller_name, sub_category, price, available_quantity, picture, rating, description } = toy;
+    const { _id, name, seller_name, sub_category, price, available_quantity, picture, rating,  } = toy;
     const handleViewDetails=()=>{
         if(!user){
-            alert('please log in first');
+            alert('You have to log in first to view details');
+          
             return;
            
         }

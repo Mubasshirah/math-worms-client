@@ -1,11 +1,14 @@
-import { useEffect, useState } from 'react';
+import { useContext, useEffect, useState } from 'react';
 import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
 import 'react-tabs/style/react-tabs.css';
 import ToyCategory from './ToyCategory';
+import { AuthContext } from '../../provider/AuthProvider';
+import { Link } from 'react-router-dom';
 
 const ShopByCategory = () => {
     const [categories, setCategories]=useState('Block Game');
     const [tabData,setTabData]=useState([]);
+   
     console.log(categories);
     useEffect(()=>{
         fetch(`http://localhost:5000/category/${categories}`)
@@ -13,6 +16,7 @@ const ShopByCategory = () => {
         .then(data=>setTabData(data))
     },[categories])
     console.log(tabData);
+    
     return (
        <div>
         <h1 className='text-5xl my-10 text-center '>Shop By Category</h1>
