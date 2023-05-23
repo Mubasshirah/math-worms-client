@@ -18,7 +18,7 @@ const Navbar = () => {
     {
         user? <>
         <Link to='/mytoys' className='px-3  hover:text-sky-500'>My Toys</Link>
-    <Link to='/addatoy' className='px-3  hover:text-sky-500'>Add a Toy</Link>
+    <Link to='/addtoys' className='px-3  hover:text-sky-500'>Add a Toy</Link>
         </> :
         <></>
     }

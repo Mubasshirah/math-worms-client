@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
 import 'react-tabs/style/react-tabs.css';
+import ToyCategory from './ToyCategory';
 
 const ShopByCategory = () => {
     const [categories, setCategories]=useState('Block Game');
@@ -24,13 +25,25 @@ const ShopByCategory = () => {
     </TabList>
 
     <TabPanel>
-      <h2>Any content 1</h2>
+     <div className='flex md:flex-row flex-col justify-center gap-10'>
+     {
+        tabData.map(single=><ToyCategory single={single} key={single._id}></ToyCategory>)
+      }
+     </div>
     </TabPanel>
     <TabPanel>
-      <h2>Any content 2</h2>
+    <div className='flex md:flex-row flex-col justify-center gap-10'>
+     {
+        tabData.map(single=><ToyCategory single={single} key={single._id}></ToyCategory>)
+      }
+     </div>
     </TabPanel>
     <TabPanel>
-      <h2>Any content 3</h2>
+    <div className='flex md:flex-row flex-col justify-center gap-10'>
+     {
+        tabData.map(single=><ToyCategory single={single} key={single._id}></ToyCategory>)
+      }
+     </div>
     </TabPanel>
   </Tabs>
         </div>

@@ -25,10 +25,12 @@ const SingleToyCard = ({ toy }) => {
                     <div className="rounded w-24 h-24">
                         <img src={picture} alt="image" />
                     </div>
-                    <p>{name}</p>
+                    
                 </div>
             </th>
-           
+           <td>
+           <p>{name}</p>
+           </td>
             <td >
               <p>{sub_category}</p>
               

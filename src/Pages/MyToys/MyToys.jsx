@@ -29,6 +29,8 @@ const MyToys = () => {
                 })
         }
     }
+
+    
     return (
         <div>
             <h2 className="text-5xl text-sky-500 my-5 text-center">Your added toys</h2>
@@ -59,6 +61,7 @@ const MyToys = () => {
                                 key={addedtoy._id}
                                 addedtoy={addedtoy}
                                 handleDelete={handleDelete}
+                                
                             ></MyToysRow>)
                         }
                     </tbody>
