@@ -44,42 +44,42 @@ const UpdatedToy = () => {
       <h1 className='text-sky-500 text-4xl text-center'>Update Toy</h1>
       <form onSubmit={handleUpdate}>
         <div className='md:flex mb-8'>
-          <div className="form-control md:w-1/2 me-4">
+          <div className="form-control me-4 w-full md:w-1/2">
             <label className="label">
               <span className="label-text">Name</span>
             </label>
             <label className="input-group">
 
-              <input type="text" name="name"className="input input-bordered md:w-full" />
+              <input type="text" name="name"className="input input-bordered  w-full" />
             </label>
           </div>
-          <div className="form-control md:w-1/2">
+          <div className="form-control w-full md:w-1/2">
             <label className="label">
               <span className="label-text">Price</span>
             </label>
             <label className="input-group">
 
-              <input type="text" name='price' className="input input-bordered md:w-full" />
+              <input type="text" name='price' className="input input-bordered w-full" />
             </label>
           </div>
         </div>
         <div className='md:flex mb-8 '>
-          <div className="form-control md:w-1/2 me-4">
+          <div className="form-control md:w-1/2 w-full me-4">
             <label className="label">
               <span className="label-text">sub category</span>
             </label>
             <label className="input-group">
 
-              <input type="text" name="subcategory"  className="input input-bordered md:w-full" />
+              <input type="text" name="subcategory"  className="input input-bordered w-full" />
             </label>
           </div>
-          <div className="form-control md:w-1/2 me-4">
+          <div className="form-control md:w-1/2 w-full me-4">
             <label className="label">
               <span className="label-text">quantity</span>
             </label>
             <label className="input-group">
 
-              <input type="text" name="quantity" className="input input-bordered md:w-full" />
+              <input type="text" name="quantity" className="input input-bordered w-full" />
             </label>
           </div>
         </div>
