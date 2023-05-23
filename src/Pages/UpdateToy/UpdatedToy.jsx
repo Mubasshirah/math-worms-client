@@ -20,7 +20,7 @@ const UpdatedToy = () => {
        
         const updated={name,quantity,subcategory,price};
         console.log(updated);
-        fetch(`http://localhost:5000/addtoys/${_id}`,{
+        fetch(`https://assignment-11-math-worms-server.vercel.app/addtoys/${_id}`,{
           method:"PUT",
           headers:{
             "content-type":"application/json",

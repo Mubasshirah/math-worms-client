@@ -29,7 +29,7 @@ const router = createBrowserRouter([
         {
             path:'/alltoys/:id',
             element:<PrivateRoute><SingleToyViewDetails></SingleToyViewDetails></PrivateRoute>,
-            loader:({params})=>fetch(`http://localhost:5000/allToys/${params.id}`)
+            loader:({params})=>fetch(`https://assignment-11-math-worms-server.vercel.app/allToys/${params.id}`)
         },
         {
             path:'/mytoys',
@@ -54,7 +54,7 @@ const router = createBrowserRouter([
         {
             path:"/addtoys/:id",
             element:<UpdatedToy></UpdatedToy>,
-            loader:({params})=>fetch(`http://localhost:5000/addtoys/${params.id}`)
+            loader:({params})=>fetch(`https://assignment-11-math-worms-server.vercel.app/addtoys/${params.id}`)
           }
       ]
      

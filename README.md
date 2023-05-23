@@ -6,5 +6,6 @@
 > i deployed the client site in firebase and server site in vercel.
 > i have used tailwind and daisy UI .
 > i have used react icons,sweetAlert.
+> website title has been changed dynamically using custom hook
 
 live link: 

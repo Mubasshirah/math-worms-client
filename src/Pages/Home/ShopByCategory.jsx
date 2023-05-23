@@ -1,9 +1,8 @@
-import { useContext, useEffect, useState } from 'react';
+import {  useEffect, useState } from 'react';
 import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
 import 'react-tabs/style/react-tabs.css';
 import ToyCategory from './ToyCategory';
-import { AuthContext } from '../../provider/AuthProvider';
-import { Link } from 'react-router-dom';
+
 
 const ShopByCategory = () => {
     const [categories, setCategories]=useState('Block Game');
@@ -11,7 +10,7 @@ const ShopByCategory = () => {
    
     console.log(categories);
     useEffect(()=>{
-        fetch(`http://localhost:5000/category/${categories}`)
+        fetch(`https://assignment-11-math-worms-server.vercel.app/category/${categories}`)
         .then(res=>res.json())
         .then(data=>setTabData(data))
     },[categories])

@@ -1,5 +1,5 @@
 import { useContext } from "react";
-import { useLoaderData } from "react-router-dom";
+
 import Swal from "sweetalert2";
 import { AuthContext } from "../../provider/AuthProvider";
 import UseTitle from "../../hooks/UseTitle";
@@ -23,7 +23,7 @@ const AddAToy = () => {
      const details=form.details.value;
      const newToy={name,selleremail,sellername,price,subcategory,rating,quantity,details};
      console.log(newToy);
-     fetch('http://localhost:5000/addtoys',{
+     fetch('https://assignment-11-math-worms-server.vercel.app/addtoys',{
         method:"POST",
         headers:{
           "content-type":"application/json",

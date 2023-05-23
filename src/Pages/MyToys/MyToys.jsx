@@ -9,7 +9,7 @@ const MyToys = () => {
     UseTitle('my toys');
     const { user } = useContext(AuthContext);
     const [addedToys, setAddedToys] = useState([]);
-    const url = `http://localhost:5000/addtoys?email=${user?.email}`;
+    const url = `https://assignment-11-math-worms-server.vercel.app/addtoys?email=${user?.email}`;
     useEffect(() => {
         fetch(url)
             .then(res => res.json())
@@ -27,7 +27,7 @@ const MyToys = () => {
             confirmButtonText: 'Yes, delete it!'
           }).then((result) => {
             if (result.isConfirmed) {
-              fetch(`http://localhost:5000/addtoys/${id}`,{
+              fetch(`https://assignment-11-math-worms-server.vercel.app/addtoys/${id}`,{
                 method:"DELETE"
               })
               .then(res=>res.json())
